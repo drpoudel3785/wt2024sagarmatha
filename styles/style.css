@@ -28,6 +28,11 @@
     .col25{width:25%; float:left;}
     .clear{clear:both;}
     
+    .box{
+        width:300px;
+        margin-left:15px;
+        margin-right:15px;
+    }
 
     p{
         color:blue !important;
@@ -51,4 +56,51 @@
     font-weight:bolder;
     margin-left:10px;
     color:#ffffff
+}
+
+#banner{
+    width:1320px;
+    height:150px;
+    background-image: url('../images/banner.jpg');
+    background-color: no-repeat;
+    background-position: top right;
+    background-size: contain;
+}
+
+#topmenu{
+    width:1320px;
+    height:50px;
+    background-color: rgb(84, 147, 247);
+}
+#topmenu ul{
+    list-style-type: none;
+    float:right;
+}
+#topmenu ul li{
+    list-style-type: none;
+    display:inline-block;
+    padding:5px;
+    margin-right:20px;
+    margin-top:15px;
+    font-family:"Robato", "sans-serif";
+    font-weight:900;
+    
+
+}
+#topmenu ul li a{
+    text-decoration: none;
+    color:#ffffff;
+    text-shadow: 3px 3px 3px #ababab;
+}
+
+#topmenu ul li:hover{
+    background-color: #ffffff;
+}
+
+
+
+.slider:hover{
+    border-radius:0px 50px 0px 50px;
+    border-right:6px solid #ccddee;
+    border-bottom:10px slid #ccddee;
 }
