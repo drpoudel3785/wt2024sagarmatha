@@ -45,6 +45,9 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             <th>Email</th>
             <th>Role</th>
             <th>Status</th>
+            <th>Photo</th>
+            <th>Actions</th>
+
         </tr>
     </thead>
     <tfoot>
@@ -54,6 +57,8 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             <th>Email</th>
             <th>Role</th>
             <th>Status</th>
+            <th>Photo</th>
+            <th>ACtions</th>
         </tr>
     </tfoot>
     <tbody>
@@ -76,6 +81,8 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             echo "<td>".$row['email']."</td>";
             echo "<td>".$row['role']."</td>";
             echo "<td>".$row['status']."</td>";
+            echo "<td><img src=uploads/".$row['photo']." width=150px></td>";
+            echo "<td><a href=manageuser.php?id=".$row['id']."&action=edit>EDIT</a> | <a href=manageuser.php?id=".$row['id']."&action=delete>DELETE</a></td>";
             echo "</tr>";
         }
         ?>
