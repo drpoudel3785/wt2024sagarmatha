@@ -10,7 +10,18 @@ include_once("inc_header.php");?>
     //checking the form is submitted or not
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $uname=$_POST["username"];
-        $upass=$_POST["password"];
+        $upass=md5($_POST["password"]);
+
+        //making the query to check the user is available
+        $sql  = "SELECT * FROM users WHERE username='$uname' and password='$upass' and status=1";
+        //include the connection
+        include('connection.php');
+
+        //execute the query
+        $qry=mysqli_query($conn, $sql) or die("Unable to login");
+
+        $count=mysqli_num_rows($qry);
+
        
         //checking the remember box is checked or not
         if(isset($_POST['remember'])){
@@ -18,7 +29,7 @@ include_once("inc_header.php");?>
             setcookie("password", $upass, time()+60*60*24*7,"/");
         }
 
-        if($uname=="admin" and $upass=="admin123"){
+        if($count==1){
             //creating the session
             $_SESSION['username']=$uname;
             $_SESSION['atime']=date("Ymdhisa");
